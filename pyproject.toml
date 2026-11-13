@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tennisage"
+version = "0.1.0"
+description = "Retrieve and plot Tennis Abstract career match age differences"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pandas>=1.5", "matplotlib>=3.6"]
+
+[tool.setuptools]
+packages = ["tennisage"]

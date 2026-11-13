@@ -52,17 +52,8 @@ def _fetch_birth_date(slug):
         page = _read_url(url)
     except (HTTPError, URLError, TimeoutError):
         return None
-    pattern = r"Born\s*:?\s*(\d{1,2}\s+[A-Za-z]+\s+\d{4})"
-    match = re.search(pattern, page, re.I)
-    if match:
-        for fmt in ("%d %B %Y", "%d %b %Y"):
-            try:
-                return datetime.strptime(match.group(1), fmt).date()
-            except ValueError:
-                pass
-    match = re.search(r"\b(\d{4}-\d{2}-\d{2})\b", page)
-    return date.fromisoformat(match.group(1)) if match else None
-
+    match = re.search(r"\bdob\s*=\s*(\d{8})", page, re.IGNORECASE)
+    return datetime.strptime(match.group(1), "%Y%m%d").date() if match else None
 
 def _parse_career_js(source):
     pattern = r"var\s+morematchmx\s*=\s*(\[\s*\[.*?\]\s*\])\s*;"

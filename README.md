@@ -7,7 +7,7 @@ A Python package that retrieves a player's career match data from Tennis Abstrac
 After pushing this project to GitHub, install it with:
 
 ~~~bash
-pip install git+https://github.com/USERNAME/REPOSITORY.git
+pip install git+https://github.com/UCB-stat159-f26/hw03-3-julio327.git
 ~~~
 
 Replace `USERNAME/REPOSITORY` with your GitHub username and repository name.

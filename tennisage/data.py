@@ -86,11 +86,7 @@ def _clean_row(row, player_birth_date):
         return None
     player_age = _age_on(match_date, player_birth_date)
     age_gap = player_age - opponent_age
-    return [
-        match_date, row[1], row[2], result, row[11],
-        player_age, opponent_age, age_gap,
-    ]
-
+    return [match_date, row[1], row[2], result, row[11], player_age, opponent_age, age_gap]
 
 def _process_career_js(source, player_birth_date):
     rows = _parse_career_js(source)
